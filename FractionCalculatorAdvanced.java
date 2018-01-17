@@ -72,6 +72,9 @@ public class FractionCalculatorAdvanced {
             // Parse and cast.
             String[] choppy = convolute.split(" ");
 
+            if (!(choppy[0].contains("/"))) { choppy[0] = choppy[0] + "/1"; }
+            if (!(choppy[2].contains("/"))) { choppy[2] = choppy[2] + "/1"; }
+
             // Cast fraction1
             String[] finechop = choppy[0].split("/");
             int[] frac1 = new int[2];

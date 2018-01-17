@@ -93,20 +93,32 @@ public class FractionCalculatorAdvanced {
 
             if (choppy[1].equals("+")) {
                 Fraction sum = fraction1.add(fraction2);
-                sum.toLowestTerms();
-                System.out.println(fraction1.toString() + " + " + fraction2.toString() + " = " + sum.toString());
+                System.out.print(fraction1.toString() + " + " + fraction2.toString() + " = " + sum.toString());
+                Fraction sumLow = new Fraction(sum.getNumerator(), sum.getDenominator());
+                sumLow.toLowestTerms();
+                if (!(sum.toString().equals(sumLow.toString()))) { System.out.print(" -> " + sumLow.toString()); }
+                System.out.print("\n");
             } else if (choppy[1].equals("-")) {
                 Fraction rem = fraction1.subtract(fraction2);
-                rem.toLowestTerms();
                 System.out.println(fraction1.toString() + " - " + fraction2.toString() + " = " + rem.toString());
+                Fraction remLow = new Fraction(rem.getNumerator(), rem.getDenominator());
+                remLow.toLowestTerms();
+                if (!(rem.toString().equals(remLow.toString()))) { System.out.print(" -> " + remLow.toString()); }
+                System.out.print("\n");
             } else if (choppy[1].equals("/")) {
                 Fraction quotient = fraction1.divide(fraction2);
-                quotient.toLowestTerms();
                 System.out.println(fraction1.toString() + " / " + fraction2.toString() + " = " + quotient.toString());
+                Fraction quoLow = new Fraction(quotient.getNumerator(), quotient.getDenominator());
+                quoLow.toLowestTerms();
+                if (!(quotient.toString().equals(quoLow.toString()))) { System.out.print(" -> " + quoLow.toString()); }
+                System.out.print("\n");
             } else if (choppy[1].equals("*")) {
                 Fraction product = fraction1.multiply(fraction2);
-                product.toLowestTerms();
                 System.out.println(fraction1.toString() + " * " + fraction2.toString() + " = " + product.toString());
+                Fraction pdtLow = new Fraction(product.getNumerator(), product.getDenominator());
+                pdtLow.toLowestTerms();
+                if (!(product.toString().equals(pdtLow.toString()))) { System.out.print(" -> " + pdtLow.toString()); }
+                System.out.print("\n");
             } else {
                 boolean answer = fraction1.equals(fraction2);
                 System.out.println(fraction1.toString() + " = " + fraction2.toString() + " is " + answer);
